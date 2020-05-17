@@ -1,0 +1,7 @@
+/.coverage
+/build
+/dist
+/expect_exception.egg-info
+/htmlcov
+__pycache__
+*.pyc
