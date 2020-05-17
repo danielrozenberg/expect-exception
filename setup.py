@@ -29,4 +29,6 @@ setuptools.setup(
         'Typing :: Typed',
     ],
     python_requires='>=3.6',
+    platforms=['any'],
+    license='ISC',
 )
