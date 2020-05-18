@@ -42,8 +42,8 @@ class _ExpectedException(contextlib.AbstractContextManager,
   def __enter__(self):
     return self
 
-  def __exit__(self, exception_type: Type[BaseException],
-               exception_value: BaseException, unused_traceback: Any):
+  def __exit__(self, exception_type: Optional[Type[BaseException]],
+               exception_value: Optional[BaseException], unused_traceback: Any):
     self._exception = exception_value
 
     if exception_type is None:
