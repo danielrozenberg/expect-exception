@@ -1,4 +1,5 @@
 /.coverage
+/.pytype
 /build
 /dist
 /expect_exception.egg-info
