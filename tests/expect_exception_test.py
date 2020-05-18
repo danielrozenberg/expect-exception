@@ -38,17 +38,17 @@ class ExpectExceptionTest(unittest.TestCase):
 
   def test_fail_on_non_exception_type(self):
     with self.assertRaisesRegex(TypeError, 'must be sub-type of BaseException'):
-      with expect_exception(tuple):
+      with expect_exception(tuple):  # type: ignore
         pass
 
   def test_fail_on_none_exception_type(self):
     with self.assertRaisesRegex(TypeError, 'must be sub-type of BaseException'):
-      with expect_exception(None):
+      with expect_exception(None):  # type: ignore
         pass
 
   def test_fail_on_exception_instance(self):
     with self.assertRaisesRegex(TypeError, 'must be sub-type of BaseException'):
-      with expect_exception(ZeroDivisionError()):
+      with expect_exception(ZeroDivisionError()):  # type: ignore
         pass
 
   def test_unexpected_exception(self):
