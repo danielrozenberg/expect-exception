@@ -48,7 +48,7 @@ class _ExpectedException(contextlib.AbstractContextManager,
 
     if exception_type is None:
       self._status = Status.UNEXPECTED_EXECUTION_COMPLETED
-      raise ExceptionNotRaisedError(None, self._status)
+      raise ExceptionNotRaisedError(self._status)
 
     if any(
         issubclass(exception_type, expected_exception_type)
@@ -58,7 +58,7 @@ class _ExpectedException(contextlib.AbstractContextManager,
 
     self._status = Status.UNEXPECTED_EXCEPTION_RAISED
     if self._wrap_unexpected_exception:
-      raise ExceptionNotRaisedError(exception_value, self._status)
+      raise ExceptionNotRaisedError(self._status) from exception_value
     return False
 
   @property

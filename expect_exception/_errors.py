@@ -9,9 +9,8 @@ from ._enums import Status
 class ExceptionNotRaisedError(RuntimeError):
   """An expected exception was not raised."""
 
-  def __init__(self, exception: Optional[BaseException], status: Status, *args):
+  def __init__(self, status: Status, *args):
     super().__init__(*args)
-    self._exception = exception
     self._status = status
 
   @property
@@ -21,4 +20,4 @@ class ExceptionNotRaisedError(RuntimeError):
   @property
   def exception(self) -> Optional[BaseException]:
     """Returns the unexpected exception if one was raised, None otherwise."""
-    return self._exception
+    return self.__cause__
