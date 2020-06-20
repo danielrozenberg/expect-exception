@@ -8,7 +8,7 @@ with open('README.md', 'r') as f:
 
 setuptools.setup(
     name='expect-exception',
-    version='1.0.1',
+    version='1.0.2',
     author='Daniel Rozenberg',
     author_email='me@danielrozenberg.com',
     description='Context manager that expects code to raise an exception',
