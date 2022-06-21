@@ -3,7 +3,7 @@
 
 import unittest
 
-from expect_exception import *
+from expect_exception import expect_exception, Status, ExceptionNotRaisedError
 
 
 class ExpectExceptionTest(unittest.TestCase):
@@ -100,7 +100,7 @@ class ExpectExceptionTest(unittest.TestCase):
     self.assertEqual(Status.UNEXPECTED_EXECUTION_COMPLETED, ee.status)
     self.assertIsNone(ee.exception)
 
-  def test_decorator_expected_exception(self):  # pylint: disable=no-self-use
+  def test_decorator_expected_exception(self):
 
     @expect_exception(ZeroDivisionError)
     def divide_by_zero():
